@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/presentation/widgets/chat/my_message_bubble.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -25,19 +26,15 @@ class _ChatView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: Column(
           children: [
-            Expanded(child: Container(
-              color: Colors.red[200],
+            Expanded(
               child: ListView.builder(
-                itemCount: 50,
-                itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text('Mensaje $index'),
-                );
-              }),
-            )),
+              itemCount: 50,
+              itemBuilder: (context, index) {
+              return const MyMessageBubble();
+            })),
             const Text('Chat'),
           ],
         ),
